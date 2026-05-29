@@ -1,5 +1,5 @@
 
-import { clsx } from "../../utils/clsx";
+import { clsx } from "../../lib/utils";
 
 export function Button({
   children,

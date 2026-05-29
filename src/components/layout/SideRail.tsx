@@ -1,4 +1,4 @@
-import { clsx } from "../../utils/clsx";
+import { clsx } from "../../lib/utils";
 import { links, sectionLabels } from "../../data/constants";
 
 function RailIcon({ id }: { id: (typeof links)[number] }) {
@@ -67,22 +67,6 @@ function RailIcon({ id }: { id: (typeof links)[number] }) {
           <rect x="4" y="7" width="16" height="12" rx="2" />
           <path d="M9 7V5.5A1.5 1.5 0 0 1 10.5 4h3A1.5 1.5 0 0 1 15 5.5V7" />
           <path d="M4 12h16" />
-        </svg>
-      );
-    case "expertise":
-      return (
-        <svg
-          viewBox="0 0 24 24"
-          className="side-rail-icon"
-          aria-hidden="true"
-          fill="none"
-          stroke="currentColor"
-          strokeWidth="1.9"
-          strokeLinecap="round"
-          strokeLinejoin="round"
-        >
-          <path d="M12 3.5l2.2 2.3 3.2-.5-.8 3.1 2.4 2.1-2.4 2.1.8 3.1-3.2-.5L12 18.5l-2.2-2.3-3.2.5.8-3.1L5 10.5l2.4-2.1-.8-3.1 3.2.5z" />
-          <circle cx="12" cy="10.5" r="2.2" />
         </svg>
       );
     case "projects":

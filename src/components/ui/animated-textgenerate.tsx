@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from "react";
-import { clsx } from "../../utils/clsx";
+import { clsx } from "../../lib/utils";
 
 type AnimatedTextGenerateProps = {
   className?: string;

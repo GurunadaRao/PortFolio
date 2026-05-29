@@ -5,13 +5,12 @@ import { SideRail } from "./components/layout/SideRail";
 import { Footer } from "./components/layout/Footer";
 import { Dialog } from "./components/ui/Dialog";
 
-import { HeroSection } from "./sections/HeroSection";
-import { AboutSection } from "./sections/AboutSection";
-import { SkillsSection } from "./sections/SkillsSection";
-import { ExperienceSection } from "./sections/ExperienceSection";
-import { ExpertiseSection } from "./sections/ExpertiseSection";
-import { ProjectsSection } from "./sections/ProjectsSection";
-import { TestimonialsSection } from "./sections/TestimonialsSection";
+import { Hero } from "./sections/Hero";
+import { About } from "./sections/About";
+import { Capabilities } from "./sections/Capabilities";
+import { Journey } from "./sections/Journey";
+import { Work } from "./sections/Work";
+import { Testimonials } from "./sections/Testimonials";
 import { ContactSection } from "./sections/ContactSection";
 import { links } from "./data/constants";
 
@@ -99,13 +98,12 @@ export default function App() {
       <SideRail activeSection={activeSection} />
 
       <main className="w-full overflow-hidden">
-        <HeroSection />
-        <AboutSection />
-        <SkillsSection />
-        <ExperienceSection />
-        <ExpertiseSection />
-        <ProjectsSection onSelectProject={setSelectedProject} />
-        <TestimonialsSection />
+        <Hero />
+        <About />
+        <Capabilities />
+        <Journey />
+        <Work onSelectProject={setSelectedProject} />
+        <Testimonials />
         <ContactSection />
       </main>
 
@@ -117,22 +115,39 @@ export default function App() {
         onClose={() => setSelectedProject(null)}
       >
         {selectedProject ? (
-          <>
-            <p className="dialog-tech">{selectedProject.tech}</p>
-            <p>{selectedProject.description}</p>
-            <div className="dialog-links">
+          <div className="space-y-4 font-sans text-neutral-800">
+            <div className="flex flex-wrap gap-2">
+              <span className="text-[10px] font-bold tracking-wider uppercase text-neutral-400 block mb-1">
+                System Blueprint
+              </span>
+              <p className="dialog-tech w-full font-mono text-xs text-neutral-700 bg-neutral-50 border border-neutral-100 p-2.5 rounded-lg">
+                {selectedProject.tech}
+              </p>
+            </div>
+            
+            <div className="space-y-2 mt-4">
+              <span className="text-[10px] font-bold tracking-wider uppercase text-neutral-400 block">
+                Deliverable Details
+              </span>
+              <p className="text-sm text-neutral-600 leading-relaxed">
+                {selectedProject.description}
+              </p>
+            </div>
+
+            <div className="dialog-links mt-6 pt-4 border-t border-neutral-100 flex flex-wrap gap-2">
               {selectedProject.links.map((link) => (
                 <a
                   key={`${selectedProject.title}-${link.label}`}
                   href={link.href}
                   target={link.external ? "_blank" : "_self"}
                   rel="noreferrer"
+                  className="inline-flex items-center gap-1 text-xs font-semibold rounded-lg bg-neutral-900 px-4 py-2.5 text-white transition hover:bg-black"
                 >
                   {link.label}
                 </a>
               ))}
             </div>
-          </>
+          </div>
         ) : null}
       </Dialog>
     </div>
