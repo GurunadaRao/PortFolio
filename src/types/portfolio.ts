@@ -22,7 +22,7 @@ export type TimelineItem = {
   title: string;
   organization: string;
   points: string[];
-  metrics: TimelineMetric[];
+  metrics?: TimelineMetric[];
   tags: string[];
   iconClass: string;
 };
@@ -41,6 +41,8 @@ export type Project = {
   description: string;
   iconClass: string;
   status?: string;
+  featured?: boolean;
+  year?: string;
   links: {
     label: string;
     href: string;

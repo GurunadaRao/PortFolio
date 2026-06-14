@@ -22,7 +22,7 @@ export const fadeInUp: Variants = {
   whileInView: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }
   },
   exit: { opacity: 0, y: -20 },
 };
@@ -32,9 +32,8 @@ export const fadeInLift: Variants = {
   whileInView: { 
     opacity: 1, 
     y: 0,
-    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] }
-  },
-  viewport: { once: true, margin: "-100px" }
+    transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const }
+  }
 };
 
 export const staggerContainer = {
@@ -51,7 +50,6 @@ export const scaleUp: Variants = {
   whileInView: {
     opacity: 1,
     scale: 1,
-    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] }
-  },
-  viewport: { once: true }
+    transition: { duration: 0.5, ease: [0.22, 1, 0.36, 1] as const }
+  }
 };

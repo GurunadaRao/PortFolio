@@ -1,9 +1,9 @@
 export const links = [
   "hero",
   "about",
-  "skills",
   "experience",
   "projects",
+  "skills",
   "testimonials",
   "contact",
 ] as const;
@@ -11,9 +11,9 @@ export const links = [
 export const sectionLabels: Record<(typeof links)[number], string> = {
   hero: "Home",
   about: "About",
-  skills: "Capabilities",
-  experience: "Journey",
-  projects: "Work",
+  experience: "Experience",
+  projects: "Projects",
+  skills: "Skills",
   testimonials: "Testimonials",
   contact: "Contact",
 };
@@ -21,9 +21,9 @@ export const sectionLabels: Record<(typeof links)[number], string> = {
 export const sectionIcons: Record<(typeof links)[number], string> = {
   hero: "fas fa-house",
   about: "fas fa-user",
-  skills: "fas fa-code",
   experience: "fas fa-briefcase",
   projects: "fas fa-folder-open",
+  skills: "fas fa-code",
   testimonials: "fas fa-comments",
   contact: "fas fa-envelope",
 };

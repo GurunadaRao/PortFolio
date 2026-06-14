@@ -40,7 +40,7 @@ export function Testimonials() {
             </span>
           </div>
           
-          <h2 className="text-4xl font-semibold tracking-tight text-neutral-900 leading-[1.12]">
+          <h2 className="text-4xl font-semibold tracking-tight text-stone-100 leading-[1.12]">
             Trusted by founders and team leads.
           </h2>
         </motion.div>
